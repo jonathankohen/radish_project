@@ -5,7 +5,12 @@ export default function Country({ name, population, region, capital, flag }) {
     return (
         <div className="card rounded" style={{ width: '18rem' }}>
             <Link to={`/countries/${name}`}>
-                <img src={flag} className="card-img-top" alt="flag" />
+                <img
+                    src={flag}
+                    className="card-img-top"
+                    alt="flag"
+                    style={{ width: '100%', height: '200px' }}
+                />
             </Link>
 
             <div className="card-body">

@@ -15,16 +15,34 @@ export default function Navbar() {
             setTheme('dark');
             document.body.classList.add('dark');
             document.body.classList.remove('light');
+
+            document.body.classList.add('navbar-dark');
+            document.body.classList.remove('navbar-light');
+
+            document.body.classList.add('bg-dark');
+            document.body.classList.remove('bg-light');
+
+            document.body.classList.add('text-light');
+            document.body.classList.remove('text-dark');
         } else if (theme === 'dark') {
             setTheme('light');
             document.body.classList.add('light');
             document.body.classList.remove('dark');
+
+            document.body.classList.add('navbar-light');
+            document.body.classList.remove('navbar-dark');
+
+            document.body.classList.add('bg-light');
+            document.body.classList.remove('bg-dark');
+
+            document.body.classList.add('text-dark');
+            document.body.classList.remove('text-light');
         }
     };
 
     return (
         <header>
-            <nav className="navbar shadow" id="nav_toggle">
+            <nav className="navbar shadow-sm" id="nav_toggle">
                 <div className="container-fluid mx-5">
                     <span className="navbar-brand mb-0 h1">
                         Where in the world?
