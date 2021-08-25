@@ -13,7 +13,7 @@ $colors: (
     color: map-get($colors, $light_or_dark + '_text');
 
     .navbar-#{light_or_dark} {
-        background-color: map-get($colors, $light_or_dark + '_bg');
+        background-color: map-get($colors, $light_or_dark + '_elements');
         color: map-get($colors, $light_or_dark + '_text');
     }
 
@@ -36,16 +36,16 @@ $colors: (
         }
     }
 
-    // .navbar-brand {
-    //     font-size: $font_size_title;
-    //     font-weight: $font_weight_semibold;
-    // }
+    .navbar-brand {
+        font-size: $font_size_title;
+        font-weight: $font_weight_semibold;
+    }
 
-    // .details {
-    //     font-size: $font_size_detail;
-    // }
+    .details {
+        font-size: $font_size_detail;
+    }
 
-    @if ($light_or_dark == 'light') {
+    @if ($light_or_dark == light) {
         .toggle_link {
             text-decoration: none;
             color: $lightmode_text;
@@ -56,7 +56,7 @@ $colors: (
                 text-decoration: underline;
             }
         }
-    } @else {
+    } @else if $light_or_dark == 'dark' {
         .toggle_link {
             text-decoration: none;
             color: $darkmode_text;

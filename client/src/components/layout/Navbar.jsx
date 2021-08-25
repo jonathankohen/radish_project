@@ -58,7 +58,10 @@ export default function Navbar() {
 
     return (
         <header>
-            <nav className="navbar shadow" id="nav_toggle">
+            <nav
+                className="navbar navbar-light bg-light shadow"
+                id="nav_toggle"
+            >
                 <div className="container-fluid mx-5">
                     <span className="navbar-brand mb-0 h1">
                         Where in the world?

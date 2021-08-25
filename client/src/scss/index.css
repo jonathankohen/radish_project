@@ -21,7 +21,7 @@ body.light {
 }
 
 body.light .navbar-light_or_dark {
-  background-color: #fafafa;
+  background-color: white;
   color: #111517;
 }
 
@@ -44,6 +44,15 @@ body.light .card .card-text {
   padding: 0;
 }
 
+body.light .navbar-brand {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+body.light .details {
+  font-size: 16px;
+}
+
 body.light .toggle_link {
   text-decoration: none;
   color: #111517;
@@ -62,7 +71,7 @@ body.dark {
 }
 
 body.dark .navbar-light_or_dark {
-  background-color: #202c37;
+  background-color: #2b3945;
   color: white;
 }
 
@@ -83,6 +92,15 @@ body.dark .card .card-title {
 body.dark .card .card-text {
   margin: 0;
   padding: 0;
+}
+
+body.dark .navbar-brand {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+body.dark .details {
+  font-size: 16px;
 }
 
 body.dark .toggle_link {
