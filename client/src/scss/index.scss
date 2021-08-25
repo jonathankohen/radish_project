@@ -1,6 +1,26 @@
 @import 'vars';
-@import 'typography';
-// @import 'components';
-@import 'countryPage';
-@import 'layout';
+// @import 'color_themes';
 @import 'custom';
+@import 'base';
+@import 'navbar';
+@import 'countryPage';
+
+// @import 'loading';
+// @import 'settings';
+// @import 'color-themes';
+// @import 'base';
+// @import 'nav';
+// @import 'portfolio';
+// @import 'portfolio-page';
+// @import 'resume';
+// @import 'contact_page';
+// @import 'item-meta';
+
+// $theme-colors: (
+//     'primary': #a874c0,
+//     'secondary': #8ab5e8,
+//     'success': #bdf3a3,
+//     'dark': rgba(59, 59, 59, 0.8),
+// );
+
+// @import '../../node_modules/bootstrap/scss/bootstrap';

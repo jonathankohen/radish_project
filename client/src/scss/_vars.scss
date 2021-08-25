@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 // Dark Mode
 $darkmode_elements: hsl(209, 23%, 22%);
 $darkmode_bg: hsl(207, 26%, 17%);
@@ -8,3 +10,25 @@ $lightmode_elements: hsl(0, 0%, 100%);
 $lightmode_bg: hsl(0, 0%, 98%);
 $lightmode_text: hsl(200, 15%, 8%);
 $lightmode_input: hsl(0, 0%, 52%);
+
+// Text
+$font_family: 'Nunito Sans', sans-serif;
+
+$font_size_home: 14px;
+$font_size_detail: 16px;
+$font_size_title: 24px;
+
+$font_weight_reg: 300;
+$font_weight_semibold: 600;
+$font_weight_bold: 800;
+
+$line_height_base: 1.6;
+$line_height_title: 1.1;
+
+%title_text {
+    font-weight: $font_weight_bold;
+    font-size: $font_size_title;
+}
+
+// Mobile
+$page-padding-mobile: 10px;

@@ -13,6 +13,9 @@ export default function Navbar() {
             // Set to Dark Mode
             localStorage.setItem('Theme', 'dark');
 
+            // Remove Light Mode class from body
+            document.body.classList.remove('light_mode');
+
             // Add Dark Mode class to body
             document.body.classList.add('dark_mode');
 
@@ -31,6 +34,9 @@ export default function Navbar() {
 
             // Remove Dark Mode class from body
             document.body.classList.remove('dark_mode');
+
+            // Add Light Mode class to body
+            document.body.classList.add('light_mode');
 
             // Remove dark Bootstrap classes from Navbar
             document
@@ -53,18 +59,25 @@ export default function Navbar() {
 
     return (
         <header>
-            <nav className="navbar navbar-light bg-light" id="nav_toggle">
-                <div className="container-fluid">
+            <nav
+                className="navbar navbar-light bg-light shadow"
+                id="nav_toggle"
+            >
+                <div className="container-fluid mx-5">
                     <span className="navbar-brand mb-0 h1">
                         Where in the world?
                     </span>
-                    <Link
-                        to="#"
-                        className="toggle_mode ms-auto"
-                        onClick={handleChange}
-                    >
-                        Dark Mode
-                    </Link>
+
+                    <div className="toggle ms-auto">
+                        <i className="far fa-moon me-2"></i>
+                        <Link
+                            to="#"
+                            className="toggle_link"
+                            onClick={handleChange}
+                        >
+                            Dark Mode
+                        </Link>
+                    </div>
                 </div>
             </nav>
         </header>
