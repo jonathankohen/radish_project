@@ -1,0 +1,42 @@
+html,
+body {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.dark_mode {
+        background-color: $darkmode_bg;
+    }
+
+    &.light_mode {
+        background-color: $lightmode_bg;
+    }
+}
+
+.navbar-dark {
+    background-color: $darkmode_bg;
+}
+
+.bg-dark {
+    background-color: $darkmode_bg;
+}
+
+.bg-light {
+    background-color: $lightmode_bg;
+}
+
+#copyright {
+    &:hover {
+        // color: $secondary_light;
+        text-decoration: none;
+    }
+}
+
+// @include media-breakpoint-up(sm) {
+
+// }
