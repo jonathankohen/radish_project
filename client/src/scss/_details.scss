@@ -3,11 +3,35 @@ body {
         #details_title {
             @extend %dark_title;
         }
+
+        a {
+            text-decoration: none;
+            color: $darkmode_text;
+        }
+
+        .btn {
+            background-color: $darkmode_elements;
+            border-color: $darkmode_elements;
+        }
     }
 
     &.light {
         #details_title {
             @extend %light_title;
+        }
+
+        a {
+            text-decoration: none;
+            color: $lightmode_input;
+        }
+
+        .btn-secondary {
+            background-color: $lightmode_elements;
+            border-color: $lightmode_elements;
+
+            &:hover {
+                color: $lightmode_text;
+            }
         }
     }
 }
@@ -22,5 +46,11 @@ body {
 
     p {
         margin: 10px 0px;
+    }
+
+    .detail_flag {
+        height: 500px;
+        // height: 390px;
+        overflow: hidden;
     }
 }

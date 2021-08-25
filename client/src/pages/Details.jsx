@@ -11,7 +11,7 @@ export default function Details() {
     const [country, setCountry] = useState({});
     const [countries, setCountries] = useState([]);
     const [results, setResults] = useState([]);
-    const [pageLoading, setPageLoading] = useState([]);
+    const [pageLoading, setPageLoading] = useState(true);
     const { name } = useParams();
     const { currencies, population, languages } = country;
 
@@ -23,6 +23,12 @@ export default function Details() {
         axios
             .get(`${baseURL}/name/${name}`)
             .then(res => setCountry(res.data[0]))
+            .then(() => {
+                axios
+                    .get(`${baseURL}/all`)
+                    .then(res => setCountries(res.data))
+                    .catch(err => console.log(err));
+            })
             .then(() =>
                 setResults(
                     countries.filter(c =>
@@ -46,13 +52,13 @@ export default function Details() {
     return (
         <>
             {!pageLoading ? (
-                <div className="container details my-5">
+                <div className="container-fluid details m-5">
                     <div className="row my-5">
                         <div className="col">
                             <Link
                                 to="/"
                                 type="button"
-                                className="btn btn-secondary px-5 py-2 shadow-sm"
+                                className="btn btn-secondary px-5 py-2 shadow"
                             >
                                 <i class="fas fa-long-arrow-alt-left me-3"></i>
                                 Back
@@ -60,16 +66,16 @@ export default function Details() {
                         </div>
                     </div>
 
-                    <div className="row d-flex justify-content-around">
-                        <div className="col">
+                    <div className="row mx-5">
+                        <div className="col d-flex justify-content-center">
                             <img
                                 src={country.flag}
-                                className="img-fluid shadow"
+                                className="img-fluid shadow detail_flag"
                                 alt="flag"
                             />
                         </div>
 
-                        <div className="col p-5">
+                        <div className="col m-5">
                             <div className="col">
                                 <h1 id="details_title">{country.name}</h1>
                             </div>
@@ -137,16 +143,20 @@ export default function Details() {
                                 </div>
                             </div>
 
-                            <div className="row mt-5">
-                                <div className="col-xs-12 col-lg-4">
-                                    <span className="details_bold">
-                                        Border Countries:
-                                    </span>
-                                </div>
+                            <div className="row mt-3 d-flex justify-content-center align-items-center">
+                                <span className="details_bold">
+                                    Border Countries:
+                                </span>
 
                                 {results.map((r, i) => (
-                                    <div className="col-xs-12 col-lg-2" key={i}>
-                                        <span>{r.name}</span>
+                                    <div className="col wrap" key={i}>
+                                        <Link
+                                            to={`/countries/${r.name}`}
+                                            type="button"
+                                            className="btn btn-secondary"
+                                        >
+                                            {r.name}
+                                        </Link>
                                     </div>
                                 ))}
                             </div>

@@ -10,12 +10,27 @@ const baseURL = 'https://restcountries.eu/rest/v2';
 
 export default function Home() {
     const [countries, setCountries] = useState([]);
+    const [pageLoading, setPageLoading] = useState([]);
 
     useEffect(() => {
+        let unmounted = false;
+
+        setPageLoading(true);
+
         axios
             .get(`${baseURL}/all`)
             .then(res => setCountries(res.data))
-            .catch(err => console.log(err));
+            .then(() => {
+                if (!unmounted) {
+                    setPageLoading(false);
+                }
+            })
+            .catch(err => {
+                if (!unmounted) {
+                    console.log(err);
+                    setPageLoading(false);
+                }
+            });
     }, []);
 
     const onNewInput = newCountries => {
@@ -24,23 +39,30 @@ export default function Home() {
 
     return (
         <main>
-            <div className="container">
-                <Countries onNewInput={onNewInput} />
+            {!pageLoading ? (
+                <div className="container">
+                    <Countries onNewInput={onNewInput} />
 
-                <div className="row">
-                    {countries ? (
-                        countries.map((country, i) => (
-                            <div className="col-xs-12 col-lg-3 mb-5" key={i}>
-                                <Country {...country} />
+                    <div className="row">
+                        {countries ? (
+                            countries.map((country, i) => (
+                                <div
+                                    className="col-xs-12 col-lg-3 mb-5"
+                                    key={i}
+                                >
+                                    <Country {...country} />
+                                </div>
+                            ))
+                        ) : (
+                            <div className="col-xs-12 col-lg-12 ms-auto">
+                                <h1>Please try again!</h1>
                             </div>
-                        ))
-                    ) : (
-                        <div className="col-xs-12 col-lg-12 ms-auto">
-                            <h1>Please try again!</h1>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
-            </div>
+            ) : (
+                ''
+            )}
         </main>
     );
 }
