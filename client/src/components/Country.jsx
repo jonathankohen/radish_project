@@ -17,7 +17,8 @@ export default function Country({ name, population, region, capital, flag }) {
                 <h5 className="card-title">{name}</h5>
 
                 <p className="card-text">
-                    <span className="card_bold">Population:</span> {population}
+                    <span className="card_bold">Population:</span>{' '}
+                    {population.toLocaleString()}
                 </p>
 
                 <p className="card-text">

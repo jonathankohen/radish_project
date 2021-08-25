@@ -51,6 +51,11 @@ $line_height_title: 1.1;
     font-weight: $font_weight_bold;
 }
 
+%light_subtitle {
+    color: $lightmode_text;
+    font-weight: $font_weight_semibold;
+}
+
 %light_btns {
     background-color: $lightmode_elements;
     border-color: $lightmode_elements;

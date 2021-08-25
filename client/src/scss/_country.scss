@@ -2,10 +2,14 @@ body {
     &.dark {
         .card {
             background-color: $darkmode_elements;
-            color: darkmode_text;
+            color: $darkmode_text;
 
             .card-title {
                 @extend %dark_title;
+            }
+
+            .card_bold {
+                @extend %dark_subtitle;
             }
 
             .card-text {
@@ -18,10 +22,14 @@ body {
     &.light {
         .card {
             background-color: $lightmode_elements;
-            color: lightmode_text;
+            color: $lightmode_text;
 
-            .card-title {
+            .card-title h1 {
                 @extend %light_title;
+            }
+
+            .card_bold {
+                @extend %light_subtitle;
             }
 
             .card-text {
@@ -30,8 +38,4 @@ body {
             }
         }
     }
-}
-
-.card_bold {
-    @extend %dark_subtitle;
 }

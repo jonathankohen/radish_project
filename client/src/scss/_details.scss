@@ -1,15 +1,26 @@
 body {
-    &.dark_mode {
-        .details {
-            font-size: $font_size_detail;
-        }
-
+    &.dark {
         #details_title {
             @extend %dark_title;
         }
+    }
 
-        .btn-secondary {
-            @extend %dark_btns;
+    &.light {
+        #details_title {
+            @extend %light_title;
         }
+    }
+}
+
+.details {
+    font-size: $font_size_detail;
+
+    .details_bold {
+        font-weight: $font_weight_semibold;
+        margin-right: 7px;
+    }
+
+    p {
+        margin: 10px 0px;
     }
 }

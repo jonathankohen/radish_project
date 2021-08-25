@@ -15,32 +15,20 @@ body {
 
     &.dark {
         background-color: $darkmode_bg;
+
+        .btn-secondary {
+            @extend %dark_btns;
+        }
     }
 
     &.light {
         background-color: $lightmode_bg;
+
+        .btn-secondary {
+            @extend %light_btns;
+        }
     }
-
-    // &.light {
-    //     @include change_colors('light');
-    // }
-
-    // &.dark {
-    //     @include change_colors('dark');
-    // }
 }
-
-// .dark {
-//     @include change_colors('dark');
-// }
-
-// .light {
-//     @include change_colors('light');
-// }
-
-// .dark {
-//     @include change_colors('dark');
-// }
 
 // #copyright {
 //     &:hover {

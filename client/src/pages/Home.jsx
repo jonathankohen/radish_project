@@ -30,7 +30,7 @@ export default function Home() {
                 <div className="row">
                     {countries ? (
                         countries.map((country, i) => (
-                            <div className="col-xs-12 col-lg-3" key={i}>
+                            <div className="col-xs-12 col-lg-3 mb-5" key={i}>
                                 <Country {...country} />
                             </div>
                         ))
