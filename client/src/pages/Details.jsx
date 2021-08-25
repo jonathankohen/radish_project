@@ -52,8 +52,8 @@ export default function Details() {
     return (
         <>
             {!pageLoading ? (
-                <div className="container-fluid details m-5">
-                    <div className="row my-5">
+                <div className="container-fluid details">
+                    <div className="row m-5">
                         <div className="col">
                             <Link
                                 to="/"
@@ -66,7 +66,7 @@ export default function Details() {
                         </div>
                     </div>
 
-                    <div className="row mx-5">
+                    <div className="row">
                         <div className="col d-flex justify-content-center">
                             <img
                                 src={country.flag}
@@ -75,7 +75,7 @@ export default function Details() {
                             />
                         </div>
 
-                        <div className="col m-5">
+                        <div className="col">
                             <div className="col">
                                 <h1 id="details_title">{country.name}</h1>
                             </div>

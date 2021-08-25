@@ -34,3 +34,10 @@ function App() {
 }
 
 export default App;
+
+// TO DO:
+// add icons
+// make sure it's responsive
+// add Footer
+// organize Sass
+// deploy
