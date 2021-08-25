@@ -1,5 +1,5 @@
 body {
-    &.dark_mode {
+    &.dark {
         .form-control {
             background-color: $darkmode_elements;
         }
@@ -10,7 +10,7 @@ body {
         }
     }
 
-    &.light_mode {
+    &.light {
         .form-control {
             background-color: $lightmode_elements;
         }

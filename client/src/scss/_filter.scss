@@ -1,12 +1,12 @@
 body {
-    &.dark_mode {
+    &.dark {
         #select {
             background-color: $darkmode_elements;
             color: $darkmode_text;
         }
     }
 
-    &.light_mode {
+    &.light {
         #select {
             background-color: $lightmode_elements;
             color: $lightmode_text;

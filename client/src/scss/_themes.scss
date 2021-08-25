@@ -10,15 +10,22 @@ $colors: (
 
 @mixin change_colors($light_or_dark) {
     background-color: map-get($colors, $light_or_dark + '_bg');
-    color: map-get($colors, $light_or_dark + '_text');
+    // color: map-get($colors, $light_or_dark + '_text');
 
-    .navbar-#{light_or_dark} {
-        background-color: map-get($colors, $light_or_dark + '_bg');
-        color: map-get($colors, $light_or_dark + '_text');
+    .navbar-brand {
+        font-size: $font_size_title;
+        font-weight: $font_weight_semibold;
     }
 
-    .bg-#{light_or_dark} {
-        background-color: map-get($colors, $light_or_dark + '_bg');
+    .toggle_link {
+        text-decoration: none;
+        color: map-get($colors, $light_or_dark + '_text');
+        font-size: $font_size_home;
+        font-weight: $font_weight_semibold;
+        &:hover {
+            color: map-get($colors, $light_or_dark + '_text');
+            text-decoration: underline;
+        }
     }
 
     .card {
@@ -36,45 +43,74 @@ $colors: (
         }
     }
 
-    // .navbar-brand {
-    //     font-size: $font_size_title;
-    //     font-weight: $font_weight_semibold;
-    // }
-
-    // .details {
-    //     font-size: $font_size_detail;
-    // }
-
-    @if ($light_or_dark == 'light') {
-        .toggle_link {
-            text-decoration: none;
-            color: $lightmode_text;
-            font-size: $font_size_home;
-            font-weight: $font_weight_semibold;
-            &:hover {
-                color: $lightmode_text;
-                text-decoration: underline;
-            }
-        }
-    } @else {
-        .toggle_link {
-            text-decoration: none;
-            color: $darkmode_text;
-            font-size: $font_size_home;
-            font-weight: $font_weight_semibold;
-            &:hover {
-                color: $darkmode_text;
-                text-decoration: underline;
-            }
-        }
+    .details {
+        font-size: $font_size_detail;
     }
 
-    // .form-control {
-    //     background-color: map-get($colors, $light_or_dark + '_element');
-    // }
-
-    // #search_input::placeholder {
-    //     color: map-get($colors, $light_or_dark + '_text');
-    //     font-size: $font_size_home;
-    // }
+    .form-control {
+        background-color: map-get($colors, $light_or_dark + '_element');
+    }
 }
+
+// .navbar-#{light_or_dark} {
+//         background-color: map-get($colors, $light_or_dark + '_elements');
+//         color: map-get($colors, $light_or_dark + '_text');
+//     }
+
+//     .bg-#{light_or_dark} {
+//         background-color: map-get($colors, $light_or_dark + '_bg');
+//     }
+
+// @if ($light_or_dark == 'light') {
+//     .toggle_link {
+//         text-decoration: none;
+//         color: $lightmode_text;
+//         font-size: $font_size_home;
+//         font-weight: $font_weight_semibold;
+//         &:hover {
+//             color: $lightmode_text;
+//             text-decoration: underline;
+//         }
+//     }
+// } @else {
+//     .toggle_link {
+//         text-decoration: none;
+//         color: $darkmode_text;
+//         font-size: $font_size_home;
+//         font-weight: $font_weight_semibold;
+//         &:hover {
+//             color: $darkmode_text;
+//             text-decoration: underline;
+//         }
+//     }
+// }
+
+// @if $light_or_dark == 'light' {
+//     .navbar-light {
+//         background-color: map-get($colors, $light_or_dark + '_elements');
+//         color: map-get($colors, $light_or_dark + '_text');
+//     }
+
+//     .bg-light {
+//         background-color: map-get($colors, $light_or_dark + '_bg');
+//     }
+
+//     #search_input::placeholder {
+//         font-size: $font_size_home;
+//         color: map-get($colors, $light_or_dark + '_input');
+//     }
+// } @else {
+//     .navbar-dark {
+//         background-color: map-get($colors, $light_or_dark + '_elements');
+//         color: map-get($colors, $light_or_dark + '_text');
+//     }
+
+//     .bg-dark {
+//         background-color: map-get($colors, $light_or_dark + '_bg');
+//     }
+
+//     #search_input::placeholder {
+//         font-size: $font_size_home;
+//         color: map-get($colors, $light_or_dark + '_text');
+//     }
+// }

@@ -13,14 +13,34 @@ body {
     font-family: $font_family;
     background-color: $lightmode_bg;
 
-    &.light {
-        @include change_colors('light');
+    &.dark {
+        background-color: $darkmode_bg;
     }
 
-    &.dark {
-        @include change_colors('dark');
+    &.light {
+        background-color: $lightmode_bg;
     }
+
+    // &.light {
+    //     @include change_colors('light');
+    // }
+
+    // &.dark {
+    //     @include change_colors('dark');
+    // }
 }
+
+// .dark {
+//     @include change_colors('dark');
+// }
+
+// .light {
+//     @include change_colors('light');
+// }
+
+// .dark {
+//     @include change_colors('dark');
+// }
 
 // #copyright {
 //     &:hover {

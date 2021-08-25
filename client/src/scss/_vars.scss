@@ -26,30 +26,35 @@ $font_weight_bold: 800;
 $line_height_base: 1.6;
 $line_height_title: 1.1;
 
-// %dark_title {
-//     color: $darkmode_text;
-//     font-weight: $font_weight_bold;
-// }
+%dark_title {
+    color: $darkmode_text;
+    font-weight: $font_weight_bold;
+}
 
-// %dark_subtitle {
-//     color: $darkmode_text;
-//     font-weight: $font_weight_semibold;
-// }
+%dark_subtitle {
+    color: $darkmode_text;
+    font-weight: $font_weight_semibold;
+}
 
-// %dark_text {
-//     color: $darkmode_text;
-//     font-weight: $font_weight_reg;
-// }
+%dark_text {
+    color: $darkmode_text;
+    font-weight: $font_weight_reg;
+}
 
-// %dark_btns {
-//     background-color: $darkmode_elements;
-//     border-color: $darkmode_elements;
-// }
+%dark_btns {
+    background-color: $darkmode_elements;
+    border-color: $darkmode_elements;
+}
 
-// %light_btns {
-//     background-color: $lightmode_elements;
-//     border-color: $lightmode_elements;
-// }
+%light_title {
+    color: $lightmode_text;
+    font-weight: $font_weight_bold;
+}
+
+%light_btns {
+    background-color: $lightmode_elements;
+    border-color: $lightmode_elements;
+}
 
 // Mobile
 $page-padding-mobile: 10px;

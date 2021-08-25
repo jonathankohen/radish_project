@@ -1,11 +1,16 @@
 body {
-    &.dark_mode {
+    &.dark {
         .navbar-dark {
             background-color: $darkmode_bg;
         }
 
         .bg-dark {
             background-color: $darkmode_bg;
+        }
+
+        .navbar-brand {
+            font-size: $font_size_title;
+            font-weight: $font_weight_semibold;
         }
 
         .toggle_link {
@@ -21,13 +26,18 @@ body {
         }
     }
 
-    &.light_mode {
+    &.light {
         .navbar-light {
             background-color: $lightmode_elements;
         }
 
         .bg-light {
             background-color: $lightmode_elements;
+        }
+
+        .navbar-brand {
+            font-size: $font_size_title;
+            font-weight: $font_weight_semibold;
         }
 
         .toggle_link {
@@ -44,7 +54,20 @@ body {
     }
 }
 
-.navbar-brand {
-    font-size: $font_size_title;
-    font-weight: $font_weight_semibold;
-}
+// .navbar-light {
+//     background-color: $lightmode_bg;
+//     color: $lightmode_bg;
+// }
+
+// .navbar-dark {
+//     background-color: $darkmode_bg;
+//     color: $darkmode_bg;
+// }
+
+// .bg-light {
+//     background-color: $lightmode_bg;
+// }
+
+// .bg-dark {
+//     background-color: $darkmode_bg;
+// }
