@@ -11,33 +11,20 @@ body {
 
 body {
     font-family: $font_family;
-    background: $lightmode_bg;
+    background-color: $lightmode_bg;
 
-    &.dark_mode {
-        background-color: $darkmode_bg;
-        color: $darkmode_text;
+    &.light {
+        @include change_colors('light');
     }
 
-    &.light_mode {
-        background-color: $lightmode_bg;
-        color: $lightmode_text;
-
-        // icon color
-
-        #search_input::placeholder {
-            color: $lightmode_input;
-            font-size: $font_size_home;
-        }
+    &.dark {
+        @include change_colors('dark');
     }
 }
 
-#copyright {
-    &:hover {
-        // color: $secondary_light;
-        text-decoration: none;
-    }
-}
-
-// @include media-breakpoint-up(sm) {
-
+// #copyright {
+//     &:hover {
+//         // color: $secondary_light;
+//         text-decoration: none;
+//     }
 // }

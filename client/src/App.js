@@ -1,10 +1,5 @@
 // Router
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Navbar from './components/layout/Navbar';
@@ -12,7 +7,7 @@ import Navbar from './components/layout/Navbar';
 
 // Pages
 import Home from './pages/Home';
-import CountryPage from './pages/CountryPage';
+import Details from './pages/Details';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,15 +21,10 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Home />
-                        {/* <Redirect to="/countries" /> */}
                     </Route>
 
-                    {/* <Route path="/countries">
-                        <Home />
-                    </Route> */}
-
                     <Route path="/countries/:name">
-                        <CountryPage />
+                        <Details />
                     </Route>
                 </Switch>
                 {/* <Footer /> */}

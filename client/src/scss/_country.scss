@@ -1,0 +1,21 @@
+body {
+    &.dark_mode {
+        .card {
+            background-color: $darkmode_elements;
+            color: darkmode_text;
+
+            .card-title {
+                @extend %dark_title;
+            }
+
+            .card-text {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
+.card_bold {
+    @extend %dark_subtitle;
+}

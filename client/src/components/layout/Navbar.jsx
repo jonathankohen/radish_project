@@ -14,10 +14,10 @@ export default function Navbar() {
             localStorage.setItem('Theme', 'dark');
 
             // Remove Light Mode class from body
-            document.body.classList.remove('light_mode');
+            document.body.classList.remove('light');
 
             // Add Dark Mode class to body
-            document.body.classList.add('dark_mode');
+            document.body.classList.add('dark');
 
             // Remove light Bootstrap classes from Navbar
             document.getElementById('nav_toggle').classList.remove('bg-light');
@@ -33,10 +33,10 @@ export default function Navbar() {
             localStorage.setItem('Theme', 'light');
 
             // Remove Dark Mode class from body
-            document.body.classList.remove('dark_mode');
+            document.body.classList.remove('dark');
 
             // Add Light Mode class to body
-            document.body.classList.add('light_mode');
+            document.body.classList.add('light');
 
             // Remove dark Bootstrap classes from Navbar
             document
@@ -53,22 +53,18 @@ export default function Navbar() {
     useEffect(() => {
         const getTheme = localStorage.getItem('Theme');
 
-        if (getTheme === 'dark')
-            return document.body.classList.add('dark_mode');
+        if (getTheme === 'dark') return document.body.classList.add('dark');
     });
 
     return (
         <header>
-            <nav
-                className="navbar navbar-light bg-light shadow"
-                id="nav_toggle"
-            >
+            <nav className="navbar shadow" id="nav_toggle">
                 <div className="container-fluid mx-5">
                     <span className="navbar-brand mb-0 h1">
                         Where in the world?
                     </span>
 
-                    <div className="toggle ms-auto">
+                    <div className="toggle ms-auto d-flex align-items-center">
                         <i className="far fa-moon me-2"></i>
                         <Link
                             to="#"

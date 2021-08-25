@@ -1,26 +1,50 @@
-.navbar-dark {
-    background-color: $darkmode_bg;
-}
+body {
+    &.dark_mode {
+        .navbar-dark {
+            background-color: $darkmode_bg;
+        }
 
-.bg-dark {
-    background-color: $darkmode_bg;
-}
+        .bg-dark {
+            background-color: $darkmode_bg;
+        }
 
-.navbar-light {
-    background-color: $lightmode_elements;
-}
+        .toggle_link {
+            text-decoration: none;
+            color: $darkmode_text;
+            font-size: $font_size_home;
+            font-weight: $font_weight_semibold;
 
-.bg-light {
-    background-color: $lightmode_bg;
+            &:hover {
+                color: $darkmode_text;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.light_mode {
+        .navbar-light {
+            background-color: $lightmode_elements;
+        }
+
+        .bg-light {
+            background-color: $lightmode_elements;
+        }
+
+        .toggle_link {
+            text-decoration: none;
+            color: $lightmode_text;
+            font-size: $font_size_home;
+            font-weight: $font_weight_semibold;
+
+            &:hover {
+                color: $lightmode_text;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .navbar-brand {
-    @extend %title_text;
-}
-
-.toggle_link {
-    text-decoration: none;
-    color: $lightmode_text;
-    font-size: $font_size_home;
+    font-size: $font_size_title;
     font-weight: $font_weight_semibold;
 }

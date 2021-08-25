@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #fafafa;
+}
+
+body.light {
+  background-color: #fafafa;
+  color: #111517;
+}
+
+body.light .navbar-light_or_dark {
+  background-color: #fafafa;
+  color: #111517;
+}
+
+body.light .bg-light_or_dark {
+  background-color: #fafafa;
+}
+
+body.light .card {
+  background-color: #fafafa;
+  color: #111517;
+}
+
+body.light .card .card-title {
+  color: #111517;
+  font-weight: 800;
+}
+
+body.light .card .card-text {
+  margin: 0;
+  padding: 0;
+}
+
+body.light .toggle_link {
+  text-decoration: none;
+  color: #111517;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body.light .toggle_link:hover {
+  color: #111517;
+  text-decoration: underline;
+}
+
+body.dark {
+  background-color: #202c37;
+  color: white;
+}
+
+body.dark .navbar-light_or_dark {
+  background-color: #202c37;
+  color: white;
+}
+
+body.dark .bg-light_or_dark {
+  background-color: #202c37;
+}
+
+body.dark .card {
+  background-color: #202c37;
+  color: white;
+}
+
+body.dark .card .card-title {
+  color: white;
+  font-weight: 800;
+}
+
+body.dark .card .card-text {
+  margin: 0;
+  padding: 0;
+}
+
+body.dark .toggle_link {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body.dark .toggle_link:hover {
+  color: white;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=index.css.map */

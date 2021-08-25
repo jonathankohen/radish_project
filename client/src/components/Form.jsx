@@ -3,7 +3,7 @@ import React from 'react';
 export default function Form() {
     return (
         <div className="col-xs-12 col-lg-4 mb-5">
-            <form className="shadow">
+            <form className="shadow-sm">
                 <input
                     type="search"
                     name="search_input"

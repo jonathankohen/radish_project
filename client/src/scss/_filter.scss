@@ -1,0 +1,15 @@
+body {
+    &.dark_mode {
+        #select {
+            background-color: $darkmode_elements;
+            color: $darkmode_text;
+        }
+    }
+
+    &.light_mode {
+        #select {
+            background-color: $lightmode_elements;
+            color: $lightmode_text;
+        }
+    }
+}

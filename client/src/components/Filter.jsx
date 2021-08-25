@@ -6,7 +6,7 @@ export default function Filter() {
             <select
                 name="select"
                 id="select"
-                className="form-select shadow"
+                className="form-select shadow-sm"
                 aria-label="Filter by Region"
             >
                 <option defaultValue>Filter by Region</option>

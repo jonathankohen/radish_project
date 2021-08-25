@@ -1,0 +1,23 @@
+body {
+    &.dark_mode {
+        .form-control {
+            background-color: $darkmode_elements;
+        }
+
+        #search_input::placeholder {
+            color: $darkmode_text;
+            font-size: $font_size_home;
+        }
+    }
+
+    &.light_mode {
+        .form-control {
+            background-color: $lightmode_elements;
+        }
+
+        #search_input::placeholder {
+            color: $lightmode_input;
+            font-size: $font_size_home;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Country({ name, population, region, capital, flag }) {
     return (
-        <div className="card" style={{ width: '18rem' }}>
+        <div className="card rounded" style={{ width: '18rem' }}>
             <Link to={`/countries/${name}`}>
                 <img src={flag} className="card-img-top" alt="flag" />
             </Link>
@@ -12,15 +12,15 @@ export default function Country({ name, population, region, capital, flag }) {
                 <h5 className="card-title">{name}</h5>
 
                 <p className="card-text">
-                    <strong>Population:</strong> {population}
+                    <span className="card_bold">Population:</span> {population}
                 </p>
 
                 <p className="card-text">
-                    <strong>Region:</strong> {region}
+                    <span className="card_bold">Region:</span> {region}
                 </p>
 
                 <p className="card-text">
-                    <strong>Capital:</strong> {capital}
+                    <span className="card_bold">Capital:</span> {capital}
                 </p>
             </div>
         </div>

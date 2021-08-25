@@ -1,0 +1,15 @@
+body {
+    &.dark_mode {
+        .details {
+            font-size: $font_size_detail;
+        }
+
+        #details_title {
+            @extend %dark_title;
+        }
+
+        .btn-secondary {
+            @extend %dark_btns;
+        }
+    }
+}
