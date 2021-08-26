@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Navbar from './components/layout/Navbar';
-// import Footer from './components/layout/Footer';
+import Footer from './components/layout/Footer';
 
 // Pages
 import Home from './pages/Home';
@@ -27,7 +27,7 @@ function App() {
                         <Details />
                     </Route>
                 </Switch>
-                {/* <Footer /> */}
+                <Footer />
             </Router>
         </div>
     );
@@ -38,6 +38,5 @@ export default App;
 // TO DO:
 // add icons
 // make sure it's responsive
-// add Footer
 // organize Sass
 // deploy
