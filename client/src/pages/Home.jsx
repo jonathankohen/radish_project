@@ -10,7 +10,7 @@ const baseURL = 'https://restcountries.eu/rest/v2';
 
 export default function Home() {
     const [countries, setCountries] = useState([]);
-    const [pageLoading, setPageLoading] = useState([]);
+    const [pageLoading, setPageLoading] = useState(false);
 
     useEffect(() => {
         let unmounted = false;

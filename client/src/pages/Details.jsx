@@ -9,70 +9,60 @@ const baseURL = 'https://restcountries.eu/rest/v2';
 
 export default function Details() {
     const [country, setCountry] = useState({});
+    const [borders, setBorders] = useState({});
     const [countries, setCountries] = useState([]);
     const [results, setResults] = useState([]);
     const [pageLoading, setPageLoading] = useState(true);
-
     const { name } = useParams();
     const nameRef = useRef(name);
-    let nr = nameRef.current;
 
-    console.log('nr onload', nameRef.current);
+    // if (name !== nameRef.current) {
+    //     nameRef.current = name;
+    // }
 
-    if (nr === undefined || nr !== name) nr = name;
+    // useEffect(() => {
 
-    console.log('test nr', nr);
+    // }, []);
 
     useEffect(() => {
-        console.log('name', name);
-        console.log('nr', nameRef.current);
+        axios
+            .get(`${baseURL}/all`)
+            .then(res => setCountries(res.data))
+            .catch(err => console.log(err));
 
-        if (nr === name) {
-            let unmounted = false;
-            setPageLoading(true);
+        let unmounted = false;
 
-            // putting current country in state
-            axios
-                .get(`${baseURL}/name/${name}`)
-                .then(res => {
-                    setCountry(res.data[0]);
-                    console.log('country', country);
-                    console.log('borders', country.borders);
-                    console.log('res', res.data[0].borders);
-                })
-                .then(() =>
-                    // putting countries in state
-                    axios
-                        .get(`${baseURL}/all`)
-                        .then(res => {
-                            setCountries(res.data);
-                            console.log('countries', countries);
-                        })
-                        // filtering for borders
-                        .then(() => {
-                            setResults(
-                                countries.filter(c =>
-                                    country.borders.includes(c.alpha3Code)
-                                )
-                            );
-                            console.log('results', results);
-                        })
-                        .catch(err => console.log(err))
-                )
-                .then(() => {
-                    if (!unmounted) {
-                        setPageLoading(false);
-                    }
-                })
-                .catch(err => {
-                    if (!unmounted) {
-                        console.log(err);
-                        setPageLoading(false);
-                    }
-                });
-        }
+        setPageLoading(true);
+
+        axios
+            .get(`${baseURL}/name/${name}`)
+            .then(res => {
+                setCountry(res.data[0]);
+            })
+            .then(res => {
+                setCountry(res.data[0]);
+            })
+            .then(() => {
+                if (!unmounted) {
+                    setPageLoading(false);
+                }
+            })
+            .catch(err => {
+                if (!unmounted) {
+                    console.log(err);
+                    setPageLoading(false);
+                }
+            });
         // eslint-disable-next-line
-    }, []);
+    }, [name]);
+
+    useEffect(() => {
+        if (country && countries && borders) {
+            setResults(
+                countries.filter(c => country.borders.includes(c.alpha3Code))
+            );
+        }
+    }, [country, countries, borders]);
 
     return (
         <>
@@ -85,7 +75,7 @@ export default function Details() {
                                 type="button"
                                 className="btn btn-secondary px-lg-5 py-2 shadow"
                             >
-                                <i className="fas fa-long-arrow-alt-left me-3"></i>
+                                <i class="fas fa-long-arrow-alt-left me-3"></i>
                                 Back
                             </Link>
                         </div>
@@ -179,14 +169,14 @@ export default function Details() {
                                 </div>
 
                                 <div className="col">
-                                    {country.borders.map((r, i) => (
+                                    {results.map((r, i) => (
                                         <Link
                                             to={`/countries/${r.name}`}
                                             key={i}
                                             type="button"
                                             className="btn btn-sm btn-secondary details_btn"
                                         >
-                                            {r}
+                                            {r.name}
                                         </Link>
                                     ))}
                                 </div>
