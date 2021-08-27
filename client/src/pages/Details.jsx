@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Routing
 import { Link, useParams } from 'react-router-dom';
@@ -9,71 +9,58 @@ const baseURL = 'https://restcountries.eu/rest/v2';
 
 export default function Details() {
     const [country, setCountry] = useState({});
-    const [borders, setBorders] = useState({});
+    const [currBorders, setCurrBorders] = useState([]);
     const [countries, setCountries] = useState([]);
     const [results, setResults] = useState([]);
-    const [pageLoading, setPageLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const { name } = useParams();
-    const nameRef = useRef(name);
-
-    // if (name !== nameRef.current) {
-    //     nameRef.current = name;
-    // }
-
-    // useEffect(() => {
-
-    // }, []);
 
     useEffect(() => {
+        setLoading(true);
+
         axios
             .get(`${baseURL}/all`)
             .then(res => setCountries(res.data))
             .catch(err => console.log(err));
 
-        let unmounted = false;
-
-        setPageLoading(true);
-
-        axios
-            .get(`${baseURL}/name/${name}`)
-            .then(res => {
-                setCountry(res.data[0]);
-            })
-            .then(res => {
-                setCountry(res.data[0]);
-            })
-            .then(() => {
-                if (!unmounted) {
-                    setPageLoading(false);
-                }
-            })
-            .catch(err => {
-                if (!unmounted) {
+        if (countries) {
+            axios
+                .get(`${baseURL}/name/${name}`)
+                .then(res => {
+                    setCountry(res.data[0]);
+                })
+                .then(res => {
+                    setCurrBorders(res.data[0].borders);
+                })
+                .then(() => {
+                    setLoading(false);
+                })
+                .catch(err => {
                     console.log(err);
-                    setPageLoading(false);
-                }
-            });
+                    setLoading(false);
+                });
+        }
         // eslint-disable-next-line
     }, [name]);
 
     useEffect(() => {
-        if (country && countries && borders) {
+        if (country && countries && currBorders) {
             setResults(
                 countries.filter(c => country.borders.includes(c.alpha3Code))
             );
         }
-    }, [country, countries, borders]);
+    }, [country, countries, currBorders]);
 
     return (
         <>
-            {!pageLoading ? (
-                <div className="container-fluid details mt-5">
+            {!loading ? (
+                <div className="container-fluid details my-5">
                     <div className="row my-5 mx-lg-5">
                         <div className="col">
                             <Link
                                 to="/"
                                 type="button"
-                                className="btn btn-secondary px-lg-5 py-2 shadow"
+                                className="btn btn-secondary px-lg-5 py-2 shadow-sm"
                             >
                                 <i class="fas fa-long-arrow-alt-left me-3"></i>
                                 Back
@@ -82,15 +69,15 @@ export default function Details() {
                     </div>
 
                     <div className="row d-flex justify-content-around">
-                        <div className="col-xs-12 col-lg-5 d-flex justify-content-center">
+                        <div className="col-xs-12 col-lg-6 d-flex justify-content-center">
                             <img
                                 src={country.flag}
-                                className="img-fluid shadow detail_flag"
+                                className="img-fluid shadow-lg details_flag"
                                 alt="flag"
                             />
                         </div>
 
-                        <div className="col-xs-12 col-lg-6">
+                        <div className="col-xs-12 col-lg-5">
                             <div className="row">
                                 <div className="col mb-3 mt-5">
                                     <h1 id="details_title">{country.name}</h1>
@@ -161,8 +148,8 @@ export default function Details() {
                                 </div>
                             </div>
 
-                            <div className="row mt-3 d-flex align-items-baseline">
-                                <div className="col-xs-12">
+                            <div className="row mt-5 d-flex align-items-baseline">
+                                <div className="col-xs-12 col-lg-3">
                                     <p className="details_bold">
                                         Border Countries:
                                     </p>
@@ -174,7 +161,7 @@ export default function Details() {
                                             to={`/countries/${r.name}`}
                                             key={i}
                                             type="button"
-                                            className="btn btn-sm btn-secondary details_btn"
+                                            className="btn btn-sm btn-secondary details_btn shadow-sm me-3"
                                         >
                                             {r.name}
                                         </Link>

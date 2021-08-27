@@ -14,6 +14,11 @@ body {
             border-color: $lightmode_elements;
         }
 
+        #search_icon {
+            background-color: $lightmode_bg;
+            color: $lightmode_input;
+        }
+
         #search_input {
             border-color: $lightmode_elements;
 
@@ -33,6 +38,11 @@ body {
             border-color: $darkmode_elements;
         }
 
+        #search_icon {
+            background-color: $darkmode_elements;
+            color: $darkmode_text;
+        }
+
         #search_input {
             &::placeholder {
                 color: $darkmode_text;
@@ -50,4 +60,5 @@ body {
 #search_input {
     font-size: $font_size_home;
     border-left: none;
+    color: $darkmode_text;
 }

@@ -34,13 +34,6 @@ export default App;
 
 // TODO:
 
-// fluid for home page
-// media queries
-// fix footer
-// fix dark mode colors/navbar
-// button width mobile details
-// get rid of link underline
-
 // if there's time:
 // make a more accurate dropdown
 // organize Sass

@@ -1,0 +1,82 @@
+.dark {
+    #details_title {
+        @extend %dark_title;
+    }
+
+    a {
+        text-decoration: none;
+        color: $darkmode_text;
+    }
+
+    .btn-secondary {
+        background-color: $darkmode_elements;
+        border-color: $darkmode_elements;
+        color: $darkmode_text;
+
+        &:hover {
+            color: $darkmode_text;
+        }
+    }
+
+    .badge {
+        &.rounded-pill {
+            background-color: $lightmode_elements;
+            border-color: $lightmode_elements;
+            margin-right: 10px;
+
+            &:hover {
+                background-color: $lightmode_elements;
+                border-color: $lightmode_elements;
+                color: $lightmode_text;
+            }
+        }
+    }
+}
+
+.light {
+    #details_title {
+        @extend %light_title;
+    }
+
+    a {
+        text-decoration: none;
+        color: $lightmode_input;
+    }
+
+    .btn-secondary {
+        background-color: $lightmode_elements;
+        border-color: $lightmode_elements;
+        color: $lightmode_text;
+
+        &:hover {
+            color: $lightmode_text;
+        }
+    }
+
+    .badge {
+        &.rounded-pill {
+            background-color: $darkmode_elements;
+            border-color: $darkmode_elements;
+            margin-right: 10px;
+
+            &:hover {
+                background-color: $lightmode_elements;
+                border-color: $lightmode_elements;
+                color: $lightmode_text;
+            }
+        }
+    }
+}
+
+.details {
+    font-size: $font_size_detail;
+
+    .details_bold {
+        font-weight: $font_weight_semibold;
+        margin-right: 7px;
+    }
+
+    p {
+        margin: 10px 0px;
+    }
+}

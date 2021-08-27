@@ -23,14 +23,10 @@
             text-decoration: underline;
         }
     }
-
-    option {
-        background-color: red;
-    }
 }
 
 .dark {
-    .navbar-dark {
+    #nav_toggle {
         background-color: $darkmode_elements;
     }
 

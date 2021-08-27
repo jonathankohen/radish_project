@@ -1,0 +1,43 @@
+@mixin declaration($property, $color, $type) {
+    $property: $color + 'mode_' + $type;
+}
+
+@mixin basicSwitch($color, $type) {
+    background-color: $color + 'mode_' + 'bg';
+    color: $color + 'mode_' + 'text';
+}
+
+%dark_title {
+    color: $darkmode_text;
+    font-weight: $font_weight_bold;
+}
+
+%dark_subtitle {
+    color: $darkmode_text;
+    font-weight: $font_weight_semibold;
+}
+
+%dark_text {
+    color: $darkmode_text;
+    font-weight: $font_weight_reg;
+}
+
+%dark_btns {
+    background-color: $darkmode_elements;
+    border-color: $darkmode_elements;
+}
+
+%light_title {
+    color: $lightmode_text;
+    font-weight: $font_weight_bold;
+}
+
+%light_subtitle {
+    color: $lightmode_text;
+    font-weight: $font_weight_semibold;
+}
+
+%light_btns {
+    background-color: $lightmode_elements;
+    border-color: $lightmode_elements;
+}
