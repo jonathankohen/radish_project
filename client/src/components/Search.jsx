@@ -39,41 +39,39 @@ export default function Search({ onNewInput }) {
     };
 
     return (
-        <section>
-            <div className="row mt-5 d-flex justify-content-between">
-                <div className="col-xs-12 col-lg-4 mb-4">
-                    <div className="input-group mb-3">
-                        <span className="input-group-text" id="search_icon">
-                            <i className="fas fa-search"></i>
-                        </span>
-                        <input
-                            type="search"
-                            name="search_input"
-                            className="form-control shadow-sm"
-                            id="search_input"
-                            placeholder="Search for a country"
-                            onChange={e => handleNameChange(e)}
-                        />
-                    </div>
-                </div>
-
-                <div className="col-xs-12 col-lg-4 mb-5">
-                    <select
-                        className="form-select shadow-sm"
-                        name="select"
-                        id="select"
-                        aria-label="Filter by Region"
-                        onChange={e => handleRegionChange(e)}
-                    >
-                        <option selected>Filter by Region</option>
-                        <option value="africa">Africa</option>
-                        <option value="americas">Americas</option>
-                        <option value="asia">Asia</option>
-                        <option value="europe">Europe</option>
-                        <option value="oceania">Oceania</option>
-                    </select>
+        <div className="row mt-5 d-flex justify-content-between align-items-center">
+            <div className="col-xs-12 col-lg-4 mb-4">
+                <div className="input-group mb-3 shadow">
+                    <span className="input-group-text" id="search_icon">
+                        <i className="fas fa-search"></i>
+                    </span>
+                    <input
+                        type="search"
+                        name="search_input"
+                        className="form-control p-3"
+                        id="search_input"
+                        placeholder="Search for a country"
+                        onChange={e => handleNameChange(e)}
+                    />
                 </div>
             </div>
-        </section>
+
+            <div className="col-xs-12 col-lg-2 mb-5">
+                <select
+                    className="form-select form-select-lg shadow p-3"
+                    name="select"
+                    id="select"
+                    aria-label="Filter by Region"
+                    onChange={e => handleRegionChange(e)}
+                >
+                    <option selected>Filter by Region</option>
+                    <option value="africa">Africa</option>
+                    <option value="americas">Americas</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
     );
 }

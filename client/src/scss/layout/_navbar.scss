@@ -1,54 +1,48 @@
-.light {
-    .navbar-light {
-        background-color: $lightmode_elements;
-    }
-
-    .bg-light {
-        background-color: $lightmode_elements;
-    }
-
-    .navbar-brand {
-        font-size: $font_size_title;
-        font-weight: $font_weight_semibold;
-    }
-
-    .toggle_link {
-        text-decoration: none;
-        color: $lightmode_text;
-        font-size: $font_size_home;
-        font-weight: $font_weight_semibold;
-
-        &:hover {
-            color: $lightmode_text;
-            text-decoration: underline;
-        }
-    }
-}
-
-.dark {
-    #nav_toggle {
-        background-color: $darkmode_elements;
-    }
-
-    .bg-dark {
-        background-color: $darkmode_elements;
-        font-weight: 800;
-    }
-
-    .toggle_link {
-        text-decoration: none;
-        color: $darkmode_text;
-        font-size: $font_size_home;
-        font-weight: $font_weight_semibold;
-
-        &:hover {
-            color: $darkmode_text;
-            text-decoration: underline;
-        }
-    }
-}
-
 #site_title {
     font-size: $font_size_title;
     font-weight: $font_weight_bold;
+}
+
+#nav_toggle {
+    background-color: var(--primary);
+}
+
+.bg-dark {
+    background-color: var(--primary);
+    font-weight: 800;
+}
+
+.toggle_link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: $font_weight_semibold;
+
+    &:hover {
+        color: var(--text-color);
+        text-decoration: underline;
+    }
+}
+
+@include media-breakpoint-up(xs) {
+    #site_title {
+        font-size: 11px;
+    }
+
+    .fa-moon {
+        font-size: 14px;
+    }
+
+    .toggle_link {
+        font-size: 12px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .fa-moon {
+        font-size: 14px;
+    }
+
+    .toggle_link {
+        font-size: 18px;
+    }
 }

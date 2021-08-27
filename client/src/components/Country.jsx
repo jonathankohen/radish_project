@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Country({ name, population, region, capital, flag }) {
     return (
-        <div className="card rounded" style={{ width: '18rem' }}>
+        <div className="card" style={{ width: '18rem' }}>
             <Link to={`/countries/${name}`}>
                 <img
                     src={flag}

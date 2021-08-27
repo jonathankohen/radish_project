@@ -7,6 +7,16 @@
     color: $color + 'mode_' + 'text';
 }
 
+@mixin textShadow {
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+@mixin textShadowSm {
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.4), 0px 2px 3px rgba(0, 0, 0, 0.1),
+        0px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
 %title {
     color: var(--text-color);
     font-weight: $font_weight_bold;
@@ -18,6 +28,15 @@
 }
 
 %colors {
-    background: var(--bg-color);
+    background: var(--primary);
     color: var(--text-color);
+    border-color: var(--primary-dark);
+}
+
+%shadow {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 4px 3px;
+}
+
+%biggerShadow {
+    box-shadow: 0 0 50px #ccc;
 }

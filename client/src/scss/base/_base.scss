@@ -1,6 +1,7 @@
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/functions';
 @import '../../../node_modules/bootstrap/scss/variables';
+
 html {
     overflow-y: auto;
     overflow-x: hidden;
@@ -11,15 +12,3 @@ body {
     height: 100vh;
     overflow-y: auto;
 }
-
-// body {
-//     background-color: $lightmode_bg;
-
-//     &.dark {
-//         background-color: $darkmode_bg;
-//     }
-
-//     &.light {
-//         background-color: $lightmode_bg;
-//     }
-// }

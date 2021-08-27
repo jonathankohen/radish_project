@@ -1,13 +1,11 @@
-// Dark Mode
-$darkmode_elements: hsl(209, 23%, 22%);
-$darkmode_bg: hsl(207, 26%, 17%);
-$darkmode_text: hsl(0, 0%, 100%);
-
-// Light Mode
-$lightmode_elements: hsl(0, 0%, 100%);
-$lightmode_bg: hsl(0, 0%, 98%);
+// Dark to light
 $lightmode_text: hsl(200, 15%, 8%);
+$darkmode_bg: hsl(207, 26%, 17%);
+$darkmode_elements: hsl(209, 23%, 22%);
 $lightmode_input: hsl(0, 0%, 52%);
+$lightmode_bg: hsl(0, 0%, 98%);
+$darkmode_text: hsl(0, 0%, 100%);
+$lightmode_elements: hsl(0, 0%, 100%);
 
 // Text
 $font_family: 'Nunito Sans', sans-serif;

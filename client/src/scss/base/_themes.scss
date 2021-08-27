@@ -3,8 +3,8 @@
 $themes: (
     'light': (
         'colors': (
-            'primary': #662e9b,
-            'secondary': #43bccd,
+            'primary': $lightmode_elements,
+            'secondary': $lightmode_text,
         ),
         'shades': (
             'shade-0': #ffffff,
@@ -18,8 +18,8 @@ $themes: (
     ),
     'dark': (
         'colors': (
-            'primary': #88d498,
-            'secondary': #db5375,
+            'primary': $darkmode_elements,
+            'secondary': $darkmode_text,
         ),
         'shades': (
             'shade-0': #404447,
@@ -46,7 +46,7 @@ $themes: (
         'text-color': map-get($shades, 'shade-6'),
     );
 
-    .app.#{$theme-name} {
+    body.#{$theme-name} {
         // define a css variable for each shade
         @each $name, $color in $shades {
             --#{$name}: #{$color};
@@ -66,12 +66,9 @@ $themes: (
     }
 }
 
-.app {
+body {
     background: var(--bg-color);
     color: var(--text-color);
-    margin: auto;
-    max-width: 720px;
-    padding: 2rem;
 }
 
 .primary {
@@ -95,16 +92,29 @@ $themes: (
 }
 
 .btn {
-    background: var(--bg-color);
-    border: 2px solid var(--border-color);
-    color: var(--text-color);
-    padding: 1rem;
+    @extend %colors;
+    // @extend %shadow;
+
+    border-color: var(--primary-dark);
 
     &:focus {
         border-color: var(--border-focus-color);
         outline: 1px solid var(--muted);
     }
+
+    &:hover {
+        background-color: var(--muted);
+        color: var(--primary-dark);
+        border-color: var(--primary-darker);
+    }
 }
+
+// .btn-secondary {
+
+//     &:hover {
+//         color: var(--text-color);
+//     }
+// }
 
 // $colors: (
 //     dark_bg: hsl(207, 26%, 17%),

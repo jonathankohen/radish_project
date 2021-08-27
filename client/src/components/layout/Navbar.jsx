@@ -42,7 +42,7 @@ export default function Navbar() {
 
     return (
         <header>
-            <nav className="navbar shadow-sm mt-2" id="nav_toggle">
+            <nav className="navbar shadow-sm py-4" id="nav_toggle">
                 <div className="container-fluid mx-lg-5">
                     <span className="navbar-brand mb-0 h1" id="site_title">
                         Where in the world?

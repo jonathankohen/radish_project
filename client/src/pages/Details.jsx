@@ -60,9 +60,9 @@ export default function Details() {
                             <Link
                                 to="/"
                                 type="button"
-                                className="btn btn-secondary px-lg-5 py-2 shadow-sm"
+                                className="btn btn-sm btn-secondary shadow-sm px-4 ms-3"
                             >
-                                <i class="fas fa-long-arrow-alt-left me-3"></i>
+                                <i class="fas fa-long-arrow-alt-left me-2"></i>
                                 Back
                             </Link>
                         </div>
@@ -78,7 +78,7 @@ export default function Details() {
                         </div>
 
                         <div className="col-xs-12 col-lg-5">
-                            <div className="row">
+                            <div className="row mt-4">
                                 <div className="col mb-3 mt-5">
                                     <h1 id="details_title">{country.name}</h1>
                                 </div>
@@ -161,7 +161,7 @@ export default function Details() {
                                             to={`/countries/${r.name}`}
                                             key={i}
                                             type="button"
-                                            className="btn btn-sm btn-secondary details_btn shadow-sm me-3"
+                                            className="btn btn-sm btn-secondary details_btn shadow-sm me-3 mb-2"
                                         >
                                             {r.name}
                                         </Link>
