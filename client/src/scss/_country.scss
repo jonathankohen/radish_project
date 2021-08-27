@@ -24,7 +24,7 @@ body {
             background-color: $lightmode_elements;
             color: $lightmode_text;
 
-            .card-title h1 {
+            .card-title {
                 @extend %light_title;
             }
 

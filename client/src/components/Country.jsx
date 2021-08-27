@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Router
 import { Link } from 'react-router-dom';
 
 export default function Country({ name, population, region, capital, flag }) {

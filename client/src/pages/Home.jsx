@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 // Components
+import Search from '../components/Search';
 import Countries from '../components/Countries';
-import Country from '../components/Country';
 
 // Axios
 import axios from 'axios';
@@ -14,7 +14,6 @@ export default function Home() {
 
     useEffect(() => {
         let unmounted = false;
-
         setPageLoading(true);
 
         axios
@@ -41,23 +40,10 @@ export default function Home() {
         <main>
             {!pageLoading ? (
                 <div className="container">
-                    <Countries onNewInput={onNewInput} />
+                    <Search onNewInput={onNewInput} />
 
                     <div className="row">
-                        {countries ? (
-                            countries.map((country, i) => (
-                                <div
-                                    className="col-xs-12 col-lg-3 mb-5"
-                                    key={i}
-                                >
-                                    <Country {...country} />
-                                </div>
-                            ))
-                        ) : (
-                            <div className="col-xs-12 col-lg-12 ms-auto">
-                                <h1>Please try again!</h1>
-                            </div>
-                        )}
+                        <Countries countries={countries} />
                     </div>
                 </div>
             ) : (

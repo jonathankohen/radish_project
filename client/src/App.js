@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
 
 // Pages
 import Home from './pages/Home';
@@ -22,12 +21,10 @@ function App() {
                     <Route exact path="/">
                         <Home />
                     </Route>
-
                     <Route path="/countries/:name">
                         <Details />
                     </Route>
                 </Switch>
-                <Footer />
             </Router>
         </div>
     );
@@ -35,8 +32,16 @@ function App() {
 
 export default App;
 
-// TO DO:
-// add icons
-// make sure it's responsive
+// TODO:
+
+// fluid for home page
+// media queries
+// fix footer
+// fix dark mode colors/navbar
+// button width mobile details
+// get rid of link underline
+
+// if there's time:
+// make a more accurate dropdown
 // organize Sass
-// deploy
+// moon icon on switch

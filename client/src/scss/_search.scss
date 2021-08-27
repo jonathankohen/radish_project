@@ -1,0 +1,53 @@
+body {
+    &.light {
+        #select {
+            background-color: $lightmode_elements;
+            color: $lightmode_text;
+            border-color: $lightmode_elements;
+        }
+
+        .form-control {
+            background-color: $lightmode_elements;
+        }
+
+        .input-group-text {
+            border-color: $lightmode_elements;
+        }
+
+        #search_input {
+            border-color: $lightmode_elements;
+
+            &::placeholder {
+                color: $lightmode_input;
+            }
+        }
+    }
+
+    &.dark {
+        .form-control {
+            background-color: $darkmode_elements;
+            border-color: $darkmode_elements;
+        }
+
+        .input-group-text {
+            border-color: $darkmode_elements;
+        }
+
+        #search_input {
+            &::placeholder {
+                color: $darkmode_text;
+            }
+        }
+
+        #select {
+            background-color: $darkmode_elements;
+            color: $darkmode_text;
+            border-color: $darkmode_elements;
+        }
+    }
+}
+
+#search_input {
+    font-size: $font_size_home;
+    border-left: none;
+}

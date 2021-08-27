@@ -9,9 +9,32 @@ body {
             color: $darkmode_text;
         }
 
-        .btn {
+        .details_btn {
             background-color: $darkmode_elements;
             border-color: $darkmode_elements;
+            color: $darkmode_text;
+            margin: 10px 10px 0px 0px;
+
+            &:hover {
+                color: $lightmode_text;
+                background-color: $lightmode_elements;
+                border-color: $lightmode_elements;
+                border: 1px solid $darkmode_elements;
+            }
+        }
+
+        .badge {
+            &.rounded-pill {
+                background-color: $darkmode_elements;
+                border-color: $darkmode_elements;
+                margin-right: 10px;
+
+                &:hover {
+                    background-color: $darkmode_elements;
+                    border-color: $lightmode_elements;
+                    color: $lightmode_text;
+                }
+            }
         }
     }
 
@@ -25,12 +48,31 @@ body {
             color: $lightmode_input;
         }
 
-        .btn-secondary {
-            background-color: $lightmode_elements;
-            border-color: $lightmode_elements;
+        .details_btn {
+            background-color: $darkmode_elements;
+            border-color: $darkmode_elements;
+            color: $darkmode_text;
+            margin: 10px 10px 0px 0px;
 
             &:hover {
                 color: $lightmode_text;
+                background-color: $lightmode_elements;
+                border-color: $lightmode_elements;
+                border: 1px solid $darkmode_elements;
+            }
+        }
+
+        .badge {
+            &.rounded-pill {
+                background-color: $darkmode_elements;
+                border-color: $darkmode_elements;
+                margin-right: 10px;
+
+                &:hover {
+                    background-color: $lightmode_elements;
+                    border-color: $lightmode_elements;
+                    color: $lightmode_text;
+                }
             }
         }
     }
@@ -49,7 +91,8 @@ body {
     }
 
     .detail_flag {
-        height: 500px;
-        overflow: hidden;
+        // width: 100%;
+        // height: 15vw;
+        // object-fit: cover;
     }
 }
