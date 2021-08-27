@@ -1,0 +1,23 @@
+@mixin declaration($property, $color, $type) {
+    $property: $color + 'mode_' + $type;
+}
+
+@mixin basicSwitch($color, $type) {
+    background-color: $color + 'mode_' + 'bg';
+    color: $color + 'mode_' + 'text';
+}
+
+%title {
+    color: var(--text-color);
+    font-weight: $font_weight_bold;
+}
+
+%subtitle {
+    color: var(--text-color);
+    font-weight: $font_weight_semibold;
+}
+
+%colors {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
