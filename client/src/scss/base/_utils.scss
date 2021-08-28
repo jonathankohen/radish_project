@@ -17,6 +17,14 @@
         0px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
+%bold {
+    font-weight: $font_weight_bold;
+}
+
+%semibold {
+    font-weight: $font_weight_semibold;
+}
+
 %title {
     color: var(--text-color);
     font-weight: $font_weight_bold;

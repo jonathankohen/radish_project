@@ -39,7 +39,7 @@ export default function Home() {
     return (
         <main>
             {!pageLoading ? (
-                <div className="container">
+                <div className="container-fluid">
                     <Search onNewInput={onNewInput} />
 
                     <div className="row">

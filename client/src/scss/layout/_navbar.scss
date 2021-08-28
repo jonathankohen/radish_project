@@ -7,10 +7,10 @@
     background-color: var(--primary);
 }
 
-.bg-dark {
-    background-color: var(--primary);
-    font-weight: 800;
-}
+// .bg-dark {
+//     background-color: var(--primary);
+//     font-weight: 800;
+// }
 
 .toggle_link {
     text-decoration: none;
@@ -19,17 +19,16 @@
 
     &:hover {
         color: var(--text-color);
-        text-decoration: underline;
     }
 }
 
 @include media-breakpoint-up(xs) {
     #site_title {
-        font-size: 11px;
+        font-size: 14px !important;
     }
 
     .fa-moon {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .toggle_link {
@@ -38,11 +37,15 @@
 }
 
 @include media-breakpoint-up(lg) {
+    #site_title {
+        font-size: $font_size_title !important;
+    }
+
     .fa-moon {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .toggle_link {
-        font-size: 18px;
+        font-size: 20px;
     }
 }

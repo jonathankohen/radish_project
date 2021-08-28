@@ -1,18 +1,10 @@
-#select {
-    background-color: var(--primary);
-    color: var(--muted);
-    border-color: var(--primary);
-    font-size: $font_size_home;
-    font-weight: $font_weight_semibold;
-}
-
 .input-group-text {
     border-color: var(--primary);
 }
 
 #search_icon {
     background-color: var(--primary);
-    color: var(--subtle);
+    color: var(--text-color);
 }
 
 #search_input {
@@ -20,54 +12,23 @@
     border-color: var(--primary);
     font-size: $font_size_home;
     border-left: none;
-    // color: var(--text-color);
+    color: var(--text-color);
 
     &::placeholder {
-        // color: var(--subtle);
+        color: var(--text-color);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem hsla(209, 23%, 22%, 0.25);
     }
 }
 
-// .light {
-//     #search_input {
-//         background-color: $lightmode_elements;
-//         border-color: $lightmode_elements;
-//     }
-// }
-// .dark {
-//     #search_input {
-//         background-color: $darkmode_elements;
-//         border-color: $darkmode_elements;
-//     }
-
-//     .form-control {
-//         background-color: $darkmode_elements;
-//         border-color: $darkmode_elements;
-//     }
-// }
-
-// .form-control {
-//     background-color: $darkmode_elements;
-//     border-color: $darkmode_elements;
-// }
-
-// .input-group-text {
-//     border-color: $darkmode_elements;
-// }
-
-// #search_icon {
-//     background-color: $darkmode_elements;
-//     color: $darkmode_text;
-// }
-
-// #search_input {
-//     &::placeholder {
-//         color: $darkmode_text;
-//     }
-// }
-
-// #select {
-//     background-color: $darkmode_elements;
-//     color: $darkmode_text;
-//     border-color: $darkmode_elements;
-// }
-// }
+#select {
+    background-color: var(--primary);
+    color: var(--text-color);
+    border-color: var(--primary);
+    font-size: $font_size_home;
+    font-weight: $font_weight_reg;
+    background-image: none;
+    // background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{var(--primary)}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E ");
+}

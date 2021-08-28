@@ -1,5 +1,12 @@
 .card {
     @extend %colors;
+    // width: 100%;
+    // height: auto;
+
+    // .card-img-top {
+    //     width: 100%;
+    //     height: auto;
+    // }
 
     .card-title {
         @extend %title;
@@ -14,3 +21,20 @@
         padding: 0;
     }
 }
+
+@include media-breakpoint-up(xs) {
+    .card {
+        .card-img-top {
+            width: 78vw;
+            // ght: 10vw;
+            /* max-width: 15vw; */
+            object-fit: cover;
+        }
+    }
+}
+
+// @include media-breakpoint-up(lg) {
+//     .card {
+//         min-width: 70%;
+//     }
+// }
