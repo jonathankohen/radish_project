@@ -1,42 +1,19 @@
 .details {
     font-size: $font_size_detail;
 
-    .details_bold {
-        font-weight: $font_weight_semibold;
-        margin-right: 7px;
-    }
-
-    p {
-        margin: 10px 0px;
-    }
-
     #details_title {
         @extend %title;
     }
 
-    a {
-        text-decoration: none;
-        color: var(--text-color);
-    }
-
-    .badge {
-        &.rounded-pill {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            margin-right: 10px;
-
-            &:hover {
-                background-color: var(--primary);
-                border-color: var(--primary);
-                color: var(--text-color);
-            }
-        }
+    .details_bold {
+        font-weight: $font_weight_semibold;
+        margin-right: 7px;
     }
 }
 
 @include media-breakpoint-up(xs) {
     .details_flag {
-        width: 93%;
+        width: 100%;
         height: 30vh;
         object-fit: cover;
     }
@@ -44,8 +21,8 @@
 
 @include media-breakpoint-up(lg) {
     .details_flag {
-        width: 95%;
-        height: 60vh;
+        width: 100%;
+        height: 50vh;
         object-fit: cover;
     }
 }

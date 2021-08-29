@@ -34,7 +34,6 @@ export default App;
 
 // TODO:
 
-// if there's time:
+// images
 // make a more accurate dropdown
 // organize Sass
-// moon icon on switch

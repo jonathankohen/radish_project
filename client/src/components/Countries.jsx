@@ -8,7 +8,7 @@ export default function Countries({ countries }) {
             {countries ? (
                 countries.map((country, i) => (
                     <div
-                        className="col-xs-12 col-md-3 mb-5 d-flex justify-content-center"
+                        className="col-xs-12 col-lg-3 mb-5 d-flex justify-content-center"
                         key={i}
                     >
                         <Country {...country} />

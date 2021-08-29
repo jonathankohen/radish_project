@@ -44,9 +44,11 @@ export default function Navbar() {
         <header>
             <nav className="navbar shadow-sm py-4" id="nav_toggle">
                 <div className="container-fluid mx-lg-5 d-flex align-items-center">
-                    <span className="navbar-brand mb-0 h1" id="site_title">
-                        Where in the world?
-                    </span>
+                    <Link to="/">
+                        <span className="navbar-brand mb-0 h1" id="site_title">
+                            Where in the world?
+                        </span>
+                    </Link>
 
                     <div className="toggle ms-auto d-flex align-items-center">
                         <Link
@@ -54,7 +56,11 @@ export default function Navbar() {
                             className="toggle_link"
                             onClick={handleChange}
                         >
-                            <i className="far fa-moon me-2"></i>
+                            {theme === 'light' ? (
+                                <i className="far fa-moon me-2"></i>
+                            ) : (
+                                <i class="fas fa-moon me-2"></i>
+                            )}
                             Dark Mode
                         </Link>
                     </div>

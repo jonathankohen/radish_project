@@ -1,24 +1,22 @@
 #site_title {
     font-size: $font_size_title;
     font-weight: $font_weight_bold;
+
+    &:hover {
+        color: var(--subtle);
+    }
 }
 
 #nav_toggle {
     background-color: var(--primary);
 }
 
-// .bg-dark {
-//     background-color: var(--primary);
-//     font-weight: 800;
-// }
-
 .toggle_link {
-    text-decoration: none;
     color: var(--text-color);
     font-weight: $font_weight_semibold;
 
     &:hover {
-        color: var(--text-color);
+        color: var(--subtle);
     }
 }
 

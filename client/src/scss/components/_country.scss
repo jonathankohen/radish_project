@@ -1,12 +1,7 @@
 .card {
     @extend %colors;
-    // width: 100%;
-    // height: auto;
 
-    // .card-img-top {
-    //     width: 100%;
-    //     height: auto;
-    // }
+    font-size: $font_size_detail;
 
     .card-title {
         @extend %title;
@@ -17,24 +12,30 @@
     }
 
     .card-text {
-        margin: 0;
-        padding: 0;
+        margin-bottom: 0.5rem;
     }
 }
 
 @include media-breakpoint-up(xs) {
     .card {
+        margin: 0 10px;
+
         .card-img-top {
-            width: 78vw;
-            // ght: 10vw;
-            /* max-width: 15vw; */
+            width: 100%;
+            min-height: 25vh;
             object-fit: cover;
         }
     }
 }
 
-// @include media-breakpoint-up(lg) {
-//     .card {
-//         min-width: 70%;
-//     }
-// }
+@include media-breakpoint-up(lg) {
+    .card {
+        .card-img-top {
+            width: 100%;
+            min-width: 20vw;
+            min-height: 25vh;
+            max-height: 25vh;
+            object-fit: cover;
+        }
+    }
+}

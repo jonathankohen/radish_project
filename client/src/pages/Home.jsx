@@ -10,25 +10,18 @@ const baseURL = 'https://restcountries.eu/rest/v2';
 
 export default function Home() {
     const [countries, setCountries] = useState([]);
-    const [pageLoading, setPageLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        let unmounted = false;
-        setPageLoading(true);
+        setLoading(true);
 
         axios
             .get(`${baseURL}/all`)
             .then(res => setCountries(res.data))
-            .then(() => {
-                if (!unmounted) {
-                    setPageLoading(false);
-                }
-            })
+            .then(() => setLoading(false))
             .catch(err => {
-                if (!unmounted) {
-                    console.log(err);
-                    setPageLoading(false);
-                }
+                console.log(err);
+                setLoading(false);
             });
     }, []);
 
@@ -37,18 +30,18 @@ export default function Home() {
     };
 
     return (
-        <main>
-            {!pageLoading ? (
-                <div className="container-fluid">
+        <>
+            {!loading ? (
+                <main className="container">
                     <Search onNewInput={onNewInput} />
 
                     <div className="row">
                         <Countries countries={countries} />
                     </div>
-                </div>
+                </main>
             ) : (
                 ''
             )}
-        </main>
+        </>
     );
 }

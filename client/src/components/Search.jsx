@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FiChevronDown } from 'react-icons/fa';
+
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 // Axios
 import axios from 'axios';
@@ -8,9 +9,11 @@ const baseURL = 'https://restcountries.eu/rest/v2';
 export default function Search({ onNewInput }) {
     const [name, setName] = useState('');
     const [region, setRegion] = useState('');
+    const { width } = useWindowDimensions();
 
     useEffect(() => {
         if (name === '') return;
+
         const url = `${baseURL}/name/${name}`;
 
         axios
@@ -22,6 +25,7 @@ export default function Search({ onNewInput }) {
 
     useEffect(() => {
         if (region === '') return;
+
         const url = `${baseURL}/region/${region}`;
 
         axios
@@ -53,12 +57,11 @@ export default function Search({ onNewInput }) {
                         id="search_input"
                         placeholder="Search for a country"
                         onChange={e => handleNameChange(e)}
+                        value={name}
                     />
                 </div>
             </div>
-
             <div className="col-7 col-lg-2 mb-5">
-                {/* FiChevronDown */}
                 <div className="input-group mb-3 shadow-sm">
                     <select
                         className="form-select shadow-sm p-3"
@@ -67,7 +70,11 @@ export default function Search({ onNewInput }) {
                         aria-label="Filter by Region"
                         onChange={e => handleRegionChange(e)}
                     >
-                        <option selected>Filter by Region</option>
+                        {width < 576 ? (
+                            <option selected>Filter by...</option>
+                        ) : (
+                            <option selected>Filter by Region</option>
+                        )}
                         <option value="africa">Africa</option>
                         <option value="americas">Americas</option>
                         <option value="asia">Asia</option>
