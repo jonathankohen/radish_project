@@ -2,6 +2,10 @@
 @import '../../../node_modules/bootstrap/scss/functions';
 @import '../../../node_modules/bootstrap/scss/variables';
 
+:root {
+    --bs-dark-rgb: #{$dark_rgb};
+}
+
 html {
     overflow-y: auto;
     overflow-x: hidden;
@@ -19,8 +23,3 @@ a {
 }
 
 $dark_rgb: 32, 44, 55;
-
-:root {
-    // RIGHT, will work in all Sass versions.
-    --bs-dark-rgb: #{$dark_rgb};
-}
