@@ -17,3 +17,10 @@ a {
     text-decoration: none;
     color: var(--text-color);
 }
+
+$dark_rgb: 32, 44, 55;
+
+:root {
+    // RIGHT, will work in all Sass versions.
+    --bs-dark-rgb: #{$dark_rgb};
+}
